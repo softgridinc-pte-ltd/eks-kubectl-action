@@ -20,7 +20,7 @@ jobs:
     steps:
       # --- #
       - name: Build and push CONTAINER_NAME
-        uses: ianbelcher/eks-kubectl-action@master
+        uses: softgridinc-pte-ltd/eks-kubectl-action@master
         with:
           aws_access_key_id: ${{ secrets.AWS_ACCESS_KEY_ID }}
           aws_secret_access_key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
@@ -50,7 +50,7 @@ jobs:
           aws-region: ${{ env.aws_region }}
       # --- #
       - name: Build and push CONTAINER_NAME
-        uses: ianbelcher/eks-kubectl-action@master
+        uses: softgridinc-pte-ltd/eks-kubectl-action@master
         with:
           cluster_name: ${{ secrets.CLUSTER_NAME }}
           args: set image --record deployment/pod-name pod-name=${{ steps.build.outputs.IMAGE_URL }}
@@ -71,7 +71,7 @@ jobs:
       # --- #
       - name: Build and push CONTAINER_NAME
         id: kubectl
-        uses: ianbelcher/eks-kubectl-action@master
+        uses: softgridinc-pte-ltd/eks-kubectl-action@master
         with:
           aws_access_key_id: ${{ secrets.AWS_ACCESS_KEY_ID }}
           aws_secret_access_key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
